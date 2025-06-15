@@ -1,29 +1,44 @@
-# Riszspeedtest
+# RiszSpeedtest
 
-Aplikasi tes kecepatan internet yang dibuat menggunakan HTML, CSS, dan JavaScript. Mengukur kecepatan download, upload, dan ping dengan antarmuka yang modern dan responsif.
+**RiszSpeedtest** adalah proyek open-source untuk mengukur kecepatan internet (ping, download, upload) langsung dari browser tanpa backend. Dibuat dengan HTML, Tailwind CSS, dan JavaScript modern.
 
-## Fitur
-- Mengukur kecepatan download dan upload dalam Mbps.
-- Mengukur latensi (ping) dalam milidetik.
-- Menampilkan informasi IP, ISP, dan lokasi pengguna.
-- Antarmuka pengguna yang terinspirasi dari Speedtest.net.
-- Log aktivitas untuk debugging.
+## ✨ Fitur Utama
 
-## Cara Menjalankan
-1. Clone repository ini: `git clone https://github.com/riswan765/riszspeedtest.git`
-2. Buka `index.html` di browser modern.
-3. Klik "Mulai Test Kecepatan" untuk memulai pengujian.
+- ✅ Tes kecepatan internet (Ping, Download, Upload)
+- ⚡ Tampilan modern dengan animasi jarum & grafik
+- 💻 100% client-side (tanpa backend)
+- 🧊 Desain glassmorphism dengan Tailwind CSS
+- 📱 Responsif di semua perangkat
+- 📊 Logging hasil (opsional)
 
-## Teknologi
-- HTML5
-- CSS3 (dengan animasi dan gradient)
-- JavaScript (dengan fetch API untuk pengujian kecepatan)
-- API eksternal: ipapi.co untuk informasi IP, Cloudflare untuk tes download.
+## 🔧 Teknologi yang Digunakan
 
-## Lisensi
-MIT License. Lihat file [LICENSE](LICENSE) untuk detail.
+- HTML
+- Tailwind CSS
+- JavaScript (Fetch API, Performance API)
 
-## Kontak
-- Instagram: [@riswanfzy](https://www.instagram.com/riswanfzy)
-- Email: riswanfauji04@gmail.com
-- GitHub: [riswan765](https://github.com/riswan765)
+## 🚀 Demo Langsung
+
+Lihat demo online: [https://riszspeedtest.free.nf](https://riszspeedtest.free.nf) *(ganti URL setelah deploy)*
+
+## 📥 Cara Menjalankan
+
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/riswan765/riszspeedtest.git
+   cd riszspeedtest
+   ```
+2. Buka `index.html` di browser
+3. Nikmati speed test langsung!
+
+## 📝 Lisensi
+
+Proyek ini dilisensikan di bawah MIT License. Lihat [LICENSE](./LICENSE) untuk informasi lebih lanjut.
+
+## 👤 Pengembang
+
+**Riswan** – [GitHub](https://github.com/riswan765) *(ganti dengan username asli)*
+
+---
+
+Jika lu suka proyek ini, jangan lupa beri ⭐ di GitHub!
