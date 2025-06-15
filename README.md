@@ -17,9 +17,9 @@
 - Tailwind CSS
 - JavaScript (Fetch API, Performance API)
 
-## 🚀 Demo Langsung
+## 🚀 Demo
 
-Lihat demo online: [https://riszspeedtest.free.nf](https://riszspeedtest.free.nf) *(ganti URL setelah deploy)*
+Lihat demo online: [https://riszspeedtest.free.nf](https://riszspeedtest.free.nf)
 
 ## 📥 Cara Menjalankan
 
