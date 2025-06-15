@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riszspeedtest - Test Kecepatan Internet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Riszspeedtest</h1>
+            <p>Test kecepatan internet Anda dengan akurat</p>
+        </div>
+
+        <div class="user-info-section">
+            <div class="user-info-grid">
+                <div class="user-info-item">
+                    <h3>Alamat IP Anda</h3>
+                    <p id="user-ip-address">Memuat...</p>
+                </div>
+                <div class="user-info-item">
+                    <h3>Provider/ISP</h3>
+                    <p id="user-isp">Memuat...</p>
+                </div>
+                <div class="user-info-item">
+                    <h3>Lokasi</h3>
+                    <p id="user-location">Memuat...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speed-display">
+            <div class="main-gauge">
+                <div class="gauge-container">
+                    <div class="gauge-bg"></div>
+                    <div class="gauge-fill" id="main-gauge"></div>
+                    <div class="speed-scale">
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                        <div class="scale-mark"></div>
+                    </div>
+                    <div class="gauge-needle" id="main-needle"></div>
+                    <div class="gauge-center"></div>
+                    <div class="gauge-inner">
+                        <div class="gauge-value" id="main-speed-value">0.0</div>
+                        <div class="gauge-unit">Mbps</div>
+                        <div class="gauge-label" id="main-speed-label">Ready</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="secondary-gauges">
+                <div class="mini-gauge">
+                    <div class="mini-gauge-bg"></div>
+                    <div class="mini-gauge-fill" id="upload-gauge-fill"></div>
+                    <div class="mini-gauge-inner">
+                        <div class="mini-gauge-value" id="upload-speed-value">0.0</div>
+                        <div class="mini-gauge-unit">Mbps</div>
+                        <div class="mini-gauge-label">Upload</div>
+                    </div>
+                </div>
+                <div class="mini-gauge">
+                    <div class="mini-gauge-bg"></div>
+                    <div class="mini-gauge-fill" id="ping-gauge-fill"></div>
+                    <div class="mini-gauge-inner">
+                        <div class="mini-gauge-value" id="ping-value">0</div>
+                        <div class="mini-gauge-unit">ms</div>
+                        <div class="mini-gauge-label">Ping</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="test-button" id="start-test">Mulai Test Kecepatan</button>
+
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="controls">
+            <button class="control-btn" id="toggle-log-btn">Tampilkan Log</button>
+        </div>
+
+        <div class="info-section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Kontak Instagram</h3>
+                    <p><a href="https://www.instagram.com/riswanfzy" target="_blank">@riswanfzy</a></p>
+                </div>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:riswanfauji04@gmail.com">riswanfauji04@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/riswan765" target="_blank">riswan765</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="log-panel" id="log-panel"></div>
+
+        <div class="footer">
+            <p>© 2024 Riszspeedtest - Menggunakan teknologi HTML5 dan JavaScript</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
