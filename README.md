@@ -19,7 +19,7 @@
 
 ## 🚀 Demo
 
-Lihat demo online: [https://riszspeedtest.free.nf](https://riszspeedtest.free.nf)
+Lihat demo online: [https://riszspeedtest.free.nf](https://riszspeedtest.pages.dev/))
 
 ## 📥 Cara Menjalankan
 
