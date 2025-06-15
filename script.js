@@ -1,3 +1,19 @@
+function safeRandomBytes(byteLength) {
+    const MAX_CHUNK_SIZE = 65536;
+    const result = new Uint8Array(byteLength);
+    
+    let offset = 0;
+    while (offset < byteLength) {
+        const chunkSize = Math.min(MAX_CHUNK_SIZE, byteLength - offset);
+        const chunk = new Uint8Array(chunkSize);
+        crypto.getRandomValues(chunk);
+        result.set(chunk, offset);
+        offset += chunkSize;
+    }
+    
+    return result;
+}
+
 let isTestRunning = false;
 let testData = {
     download: 0,
@@ -164,7 +180,7 @@ async function measureDownloadSpeed() {
         'https://speed.cloudflare.com/__down?bytes=2000000',
         'https://speed.cloudflare.com/__down?bytes=5000000',
         'https://speed.cloudflare.com/__down?bytes=10000000'
-    ];
+    ]; // Dikurangi untuk hemat kuota
     let totalMeasuredSpeed = 0;
     let successfulTests = 0;
     const downloadSpeeds = [];
@@ -217,15 +233,34 @@ async function measureDownloadSpeed() {
 
 async function measureUploadSpeed() {
     log('Memulai test Upload...', 'info');
-    const testSizes = [0.2, 0.5, 1, 2];
+    const testSizes = [0.05, 0.1, 0.2, 0.5]; // MB, dikurangi untuk hemat kuota
     let totalMeasuredSpeed = 0;
     let successfulTests = 0;
     const uploadSpeeds = [];
 
     for (let i = 0; i < testSizes.length; i++) {
         const sizeMB = testSizes[i];
-        const data = new Blob([crypto.getRandomValues(new Uint8Array(sizeMB * 1024 * 1024))]);
+        const sizeBytes = Math.floor(sizeMB * 1024 * 1024);
+        let buffer;
+
         try {
+            log(`Membuat buffer untuk ${sizeMB} MB (${sizeBytes} bytes)...`, 'info');
+            
+            // Use the safeRandomBytes function which handles chunking internally
+            if (window.crypto && window.crypto.getRandomValues) {
+                buffer = safeRandomBytes(sizeBytes);
+                log(`Buffer berhasil dibuat dengan ukuran ${buffer.length} bytes`, 'info');
+            } else {
+                // Fallback ke Math.random jika crypto tidak tersedia
+                log('Crypto API tidak tersedia, menggunakan Math.random sebagai fallback.', 'warning');
+                buffer = new Uint8Array(sizeBytes);
+                for (let j = 0; j < sizeBytes; j++) {
+                    buffer[j] = Math.floor(Math.random() * 256);
+                }
+            }
+
+            const data = new Blob([buffer]);
+            log(`Memulai upload ${sizeMB} MB...`, 'info');
             const start = performance.now();
             const response = await fetch('https://httpbin.org/post', {
                 method: 'POST',
